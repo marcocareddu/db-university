@@ -1,17 +1,14 @@
 -- QUERY CON SELECT
 -- -------------------------------------------------------------
 -- 1. Selezionare tutti gli studenti nati nel 1990 (160)
-
 SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
 
 
 -- 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
-
 SELECT * FROM `courses` WHERE `cfu` > 10;
 
 
 -- 3. Selezionare tutti gli studenti che hanno più di 30 anni
-
 SELECT * FROM `students` WHERE (2023 - YEAR(`date_of_birth`)) > 30;
 
 
@@ -24,6 +21,7 @@ SELECT * FROM `exams` WHERE DATE(`date`) = '2020-06-20' AND TIME(`hour`) > '14:0
 
 
 -- 6. Selezionare tutti i corsi di laurea magistrale (38)
+SELECT * FROM `degrees` WHERE `level` = 'magistrale';
 
 
 -- 7. Da quanti dipartimenti è composta l'università? (12)
