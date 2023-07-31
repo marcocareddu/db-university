@@ -58,7 +58,7 @@ SELECT S.`name` AS `Nome studente`, S.`surname` AS `Cognome studente`, D.`name` 
 
 
 -- 2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
-
+SELECT `DEP`.`name` AS `Nome dipartimento`, DEG.`name` AS `Nome corso` FROM `departments` AS DEP JOIN `degrees` AS DEG ON DEP.`id` = DEG.`department_id` WHERE DEP.`name` = 'Dipartimento di Neuroscienze';
 
 -- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
 
