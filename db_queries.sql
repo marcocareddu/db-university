@@ -9,7 +9,7 @@ SELECT * FROM `courses` WHERE `cfu` > 10;
 
 
 -- 3. Selezionare tutti gli studenti che hanno più di 30 anni
-SELECT * FROM `students` WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) > 30;
+SELECT * FROM `students` WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) >= 30;
 
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
@@ -29,7 +29,7 @@ SELECT COUNT(*) AS `Numero dipartimenti` FROM `departments`;
 
 
 -- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
-SELECT * FROM `teachers` WHERE `phone` IS NULL;
+SELECT COUNT(*) AS `Numero insegnanti senza telefono` FROM `teachers` WHERE `phone` IS NULL;
 
 
 
@@ -49,3 +49,27 @@ SELECT `student_id` AS `ID Studente`, ROUND(AVG(`vote`)) AS `Media` FROM `exam_s
 
 -- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 SELECT COUNT(*) AS `Totale corsi`, `department_id` AS `Dipartimento` FROM `degrees` GROUP BY `department_id`;
+
+
+-- QUERY CON JOIN
+-- -------------------------------------------------------------
+-- 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+
+
+-- 2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
+
+
+-- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+
+-- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti ed il relativo dipartimento, in ordine alfabetico per cognome e nome
+
+
+-- 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+
+-- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+
+
+-- 7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
