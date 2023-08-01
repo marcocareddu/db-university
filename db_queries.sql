@@ -77,4 +77,4 @@ SELECT DISTINCT DEP.`name` AS `Facoltà`, T.`name` AS `Nome insegnante`, T.`surn
 
 
 -- 7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
-
+SELECT S.`name` AS 'Nome', S.`surname` AS 'Cognome', C.`name` AS 'Corso', COUNT(ES.`vote`) AS 'Tentativi d\'esame' FROM `students` AS S JOIN `exam_student` AS ES ON S.`id` = ES.`student_id` JOIN `exams` AS E ON E.`id` = ES.`exam_id` JOIN `courses` AS C ON C.`id` = E.`course_id` GROUP BY S.`id`, C.`id` HAVING MAX(ES.`vote`) >= 18;
